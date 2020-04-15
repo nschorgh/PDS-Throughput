@@ -4,7 +4,7 @@ Utilities for High-Throughput PDS Data Processing
 *by Norbert Schorghofer*
 
 
-These are the first components of a collection of utitilies for high-throuhput processing of data from the PDS (Planetary Data System).
+These are the first components of a collection of utitilies for high-throughput processing of data from the PDS (Planetary Data System).
 * Diviner RDR level-1 files
 
 

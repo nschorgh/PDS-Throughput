@@ -10,7 +10,7 @@ set fn = 200908010000_RDR.TAB
 
 rm -f tmp
 
-# do not use shell built-in time command
+# do not use shell built-in time command; instead use /usr/bin/time 
 
 # only copy file
 /usr/bin/time -o tmp -a  cp $fn tmp.tab
@@ -40,3 +40,7 @@ rm -f $fn
 rm -f $fn
 /usr/bin/time -o tmp -a  unzip $fn.zip 
 
+# zst
+rm -f $fn
+/usr/bin/time -o tmp -a  unzstd $fn.zst
+ 

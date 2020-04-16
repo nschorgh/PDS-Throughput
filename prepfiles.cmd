@@ -5,9 +5,9 @@
 set fn = 200908010000_RDR.TAB
 #set fn = dgdr_tbol_avg_poln_20090810n_240_img.img
 
-rm -f $fn.bz2 $fn.gz $fn.lz4 $fn.rar $fn.lzma $fn.zip $fn.zst
+rm -f $fn.bz2 $fn.gz $fn.lz4 $fn.lzma $fn.rar $fn.zip $fn.zst
 
-# sorted by file extension
+# ordered according to file extension
 # -default level (range of levels)
 
 # bzip2 -9 (1..9)

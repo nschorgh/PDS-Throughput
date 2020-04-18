@@ -1,4 +1,4 @@
-#!/bin/tcsh
+#!/bin/csh
 # compress one file into various formats
 
 # name of input file

@@ -8,12 +8,17 @@ set fn = 200908010000_RDR.TAB
 # input files must exist
 # prepfiles.cmd creates these files
 
+echo To clear disk buffer execute 
+echo sudo sysctl -w vm.drop_caches=1
+echo before running this script
+
 rm -f tmp
 
-# do not use shell built-in time command; instead use /usr/bin/time 
+# do not use shell built-in time command, instead use /usr/bin/time
 
 # only copy file
-/usr/bin/time -o tmp -a  cp $fn tmp.tab
+#/usr/bin/time -o tmp -a  cp $fn tmp.tab
+/usr/bin/time -o tmp -a  cat $fn > tmp.tab
 rm -f tmp.tab
 
 # bzip2
@@ -40,7 +45,7 @@ rm -f $fn
 rm -f $fn
 /usr/bin/time -o tmp -a  unzip $fn.zip 
 
-# zst
+# zstd
 rm -f $fn
 /usr/bin/time -o tmp -a  unzstd $fn.zst
  

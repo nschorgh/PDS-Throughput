@@ -17,34 +17,35 @@ rm -f tmp
 # do not use shell built-in time command, instead use /usr/bin/time
 
 # txt
-/usr/bin/time -o tmp -a  cp $fn tmp.tab
-rm -f tmp.tab
+/usr/bin/time -o tmp -a  cat $fn > tmp_tab
 
 # bzip2
 rm -f $fn
-/usr/bin/time -o tmp -a  bzip2 -d -k $fn.bz2
+/usr/bin/time -o tmp -a  bzip2 -d -k -c $fn.bz2 > tmp_bz
 
 # gzip
 rm -f $fn
-/usr/bin/time -o tmp -a  gunzip -k $fn.gz 
+/usr/bin/time -o tmp -a  gunzip -k -c $fn.gz > tmp_gz 
 
 # lz4
 rm -f $fn
-/usr/bin/time -o tmp -a  lz4 -d $fn.lz4 
+/usr/bin/time -o tmp -a  lz4 -d -c $fn.lz4 > tmp_lz4
 
 # lzma 
 rm -f $fn
-/usr/bin/time -o tmp -a  lzma -d -k $fn.lzma 
+/usr/bin/time -o tmp -a  lzma -d -k -c $fn.lzma > tmp_lzma
 
 # rar
 rm -f $fn
-/usr/bin/time -o tmp -a  unrar e -inul $fn.rar 
+/usr/bin/time -o tmp -a  unrar p -inul $fn.rar > tmp_rar
 
 # zip
 rm -f $fn
-/usr/bin/time -o tmp -a  unzip -q $fn.zip 
+/usr/bin/time -o tmp -a  unzip -c -q $fn.zip  > tmp_zip
 
 # zstd
 rm -f $fn
-/usr/bin/time -o tmp -a  unzstd -q $fn.zst
- 
+/usr/bin/time -o tmp -a  unzstd -c -q $fn.zst > tmp_zst
+
+
+# rm -f tmp_?z tmp_??? tmp_lzma

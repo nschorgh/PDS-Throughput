@@ -15,29 +15,29 @@ echo sudo sysctl -w vm.drop_caches=1
 echo before running this script
 
 
-rm -f tmp tmp.20*RDR.TAB*
+rm -f tmp tmp.2009*RDR.TAB*
 
 # txt
-/usr/bin/time -o tmp  csh -c 'ls 200908010*.TAB | parallel -I% --max-args 1  -j 3   filter1_txt.cmd'
+/usr/bin/time -o tmp  csh -c 'ls 200908010*.TAB | parallel -X -I% --max-args 1  -j 3   filter1_txt.cmd'
 
 # bzip2
 
 # gz
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.gz  | parallel -I% --max-args 1  -j 3  filter1_gz.cmd'
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.gz  | parallel -X -I% --max-args 1  -j 3  filter1_gz.cmd'
 
 # lz4
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.lz4 | parallel -I% --max-args 1  -j 3  filter1_lz4.cmd'
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.lz4 | parallel -X -I% --max-args 1  -j 3  filter1_lz4.cmd'
 
 # lzma
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.lzma | parallel -I% --max-args 1  -j 3  filter1_lzma.cmd'
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.lzma | parallel -X -I% --max-args 1  -j 3  filter1_lzma.cmd'
 
 # rar
 
 # zip
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zip | parallel -I% --max-args 1  -j 3   filter1_zip.cmd'
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zip | parallel -X -I% --max-args 1  -j 3   filter1_zip.cmd'
 
 # zst
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zst | parallel -I% --max-args 1  -j 3   filter1_zst.cmd'
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zst | parallel -X -I% --max-args 1  -j 3   filter1_zst.cmd'
 
 
 

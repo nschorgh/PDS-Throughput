@@ -20,32 +20,25 @@ rm -f tmp
 /usr/bin/time -o tmp -a  cat $fn > tmp_tab
 
 # bzip2
-rm -f $fn
 /usr/bin/time -o tmp -a  bzip2 -d -k -c $fn.bz2 > tmp_bz
 
 # gzip
-rm -f $fn
 /usr/bin/time -o tmp -a  gunzip -k -c $fn.gz > tmp_gz 
 
 # lz4
-rm -f $fn
 /usr/bin/time -o tmp -a  lz4 -d -c $fn.lz4 > tmp_lz4
 
 # lzma 
-rm -f $fn
 /usr/bin/time -o tmp -a  lzma -d -k -c $fn.lzma > tmp_lzma
 
 # rar
-rm -f $fn
 /usr/bin/time -o tmp -a  unrar p -inul $fn.rar > tmp_rar
 
 # zip
-rm -f $fn
 /usr/bin/time -o tmp -a  unzip -c -q $fn.zip  > tmp_zip
 
 # zstd
-rm -f $fn
 /usr/bin/time -o tmp -a  unzstd -c -q $fn.zst > tmp_zst
 
 
-# rm -f tmp_?z tmp_??? tmp_lzma
+rm -f tmp_?z tmp_??? tmp_lzma

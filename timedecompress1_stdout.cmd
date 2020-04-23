@@ -1,5 +1,5 @@
 #!/bin/csh
-# measure times for file decompression
+# measure times for file decompression to stdout
 
 # name of input file
 set fn = 200908010000_RDR.TAB
@@ -17,7 +17,7 @@ rm -f tmp
 # do not use shell built-in time command, instead use /usr/bin/time
 
 # txt
-/usr/bin/time -o tmp -a  cat $fn > tmp_tab
+/usr/bin/time -o tmp     cat $fn > tmp_tab
 
 # bzip2
 /usr/bin/time -o tmp -a  bzip2 -d -k -c $fn.bz2 > tmp_bz

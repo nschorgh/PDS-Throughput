@@ -17,7 +17,7 @@ rm -f tmp
 # do not use shell built-in time command, instead use /usr/bin/time
 
 # txt
-/usr/bin/time -o tmp -a  cp $fn tmp.tab
+/usr/bin/time -o tmp     cp $fn tmp.tab
 rm -f tmp.tab
 
 # bzip2
@@ -30,7 +30,7 @@ rm -f $fn
 
 # lz4
 rm -f $fn
-/usr/bin/time -o tmp -a  lz4 -d $fn.lz4 
+/usr/bin/time -o tmp -a  lz4 -d -q $fn.lz4 
 
 # lzma 
 rm -f $fn

@@ -3,12 +3,12 @@
 # 200908010*_RDR.TAB* must exist
 
 # make sure the directory contains the expected number of files
-ls -l 200908010*.TAB | wc
-ls -l 200908010*.gz | wc
-ls -l 200908010*.lz4 | wc
-ls -l 200908010*.lzma | wc
-ls -l 200908010*.zip | wc
-ls -l 200908010*.zst | wc
+ls  200908010*.TAB | wc
+ls  200908010*.gz | wc
+ls  200908010*.lz4 | wc
+ls  200908010*.lzma | wc
+ls  200908010*.zip | wc
+ls  200908010*.zst | wc
 
 echo To clear disk buffer execute 
 echo sudo sysctl -w vm.drop_caches=1

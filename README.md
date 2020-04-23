@@ -14,15 +14,13 @@ Formats:
 
 ### Throughput Studies
 
-`prepfiles.cmd`  
-    creates files of various compression formats
+`prepfiles.cmd`  creates files of various compression formats
 
-`timedecompress1.cmd`  
-    measures time for file decompression
+`timedecompress1.cmd`, `timedecompress1_stdout.cmd`  measure time for file decompression
 
 `Parallel/`  
-    `timeparallel.cmd`: measure times for parallel file decompresson and filtering  
-    `parallel_*.cmd`: shell scripts called by timeparallel.cmd  
+    `timeparallelfilter.cmd`: measure times for parallel file decompresson and filtering  
+    `filter1_*.cmd`: shell scripts called by timeparallelfilter.cmd  
 
 
 ### Throughput Tools

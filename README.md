@@ -18,9 +18,8 @@ Formats:
 
 `timedecompress1.cmd`, `timedecompress1_stdout.cmd`  measure time for file decompression
 
-`Parallel/`  
-    `timeparallelfilter.cmd`: measure times for parallel file decompresson and filtering  
-    `filter1_*.cmd`: shell scripts called by timeparallelfilter.cmd  
+`Parallel/timeparallelfilter.cmd`: measures times for parallel file decompresson and filtering  
+`Parallel/filter1_*.cmd`: shell scripts called by timeparallelfilter.cmd  
 
 
 ### Throughput Tools

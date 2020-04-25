@@ -10,6 +10,9 @@ rm -f $fn.bz2 $fn.gz $fn.lz4 $fn.lzma $fn.rar $fn.zip $fn.zst
 # ordered according to file extension
 # -default level (range of levels)
 
+# brotli -11 (1..11)  insanely slow
+brotli -k $fn
+
 # bzip2 -9 (1..9)
 bzip2 -z -k $fn
 
@@ -24,6 +27,9 @@ lzma -k $fn
 
 # rar -m3 (0..5)
 rar a $fn.rar $fn
+
+# rzip -6 (0..9)
+rzip -k $fn
 
 # zip -6  (0..9)
 zip $fn.zip $fn

@@ -4,6 +4,7 @@
 
 # make sure the directory contains the expected number of files
 ls  200908010*.TAB | wc
+ls  200908010*.br | wc
 ls  200908010*.gz | wc
 ls  200908010*.lz4 | wc
 ls  200908010*.lzma | wc
@@ -20,10 +21,11 @@ rm -f tmp tmp.2009*RDR.TAB*
 # txt
 /usr/bin/time -o tmp  csh -c 'ls 200908010*.TAB | parallel -X -I% --max-args 1  -j 3   filter1_txt.cmd'
 
-# bzip2
+# brotli
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.br  | parallel -X -I% --max-args 1  -j 3  filter1_brotli.cmd'
 
-# gz
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.gz  | parallel -X -I% --max-args 1  -j 3  filter1_gz.cmd'
+# gzip
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.gz  | parallel -X -I% --max-args 1  -j 3  filter1_gzip.cmd'
 
 # lz4
 /usr/bin/time -o tmp -a  csh -c 'ls 200908010*.lz4 | parallel -X -I% --max-args 1  -j 3  filter1_lz4.cmd'
@@ -31,13 +33,11 @@ rm -f tmp tmp.2009*RDR.TAB*
 # lzma
 /usr/bin/time -o tmp -a  csh -c 'ls 200908010*.lzma | parallel -X -I% --max-args 1  -j 3  filter1_lzma.cmd'
 
-# rar
-
 # zip
 /usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zip | parallel -X -I% --max-args 1  -j 3   filter1_zip.cmd'
 
-# zst
-/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zst | parallel -X -I% --max-args 1  -j 3   filter1_zst.cmd'
+# zstd
+/usr/bin/time -o tmp -a  csh -c 'ls 200908010*.zst | parallel -X -I% --max-args 1  -j 3   filter1_zstd.cmd'
 
 
 

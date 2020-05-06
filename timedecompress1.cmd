@@ -8,7 +8,7 @@ set fn = 200908010000_RDR.TAB
 # input files must exist
 # prepfiles.cmd creates these files
 
-echo To clear disk buffer execute 
+echo To clear page caches execute 
 echo sudo sysctl -w vm.drop_caches=1
 echo before running this script
 
@@ -19,6 +19,10 @@ rm -f tmp
 # txt
 /usr/bin/time -o tmp     cp $fn tmp.tab
 rm -f tmp.tab
+
+# brotli
+rm -f $fn
+/usr/bin/time -o tmp -a  brotli -d -k $fn.br 
 
 # bzip2
 rm -f $fn
@@ -39,6 +43,10 @@ rm -f $fn
 # rar
 rm -f $fn
 /usr/bin/time -o tmp -a  unrar e -inul $fn.rar 
+
+# rzip
+rm -f $fn
+/usr/bin/time -o tmp -a  rzip -d -k $fn.rz 
 
 # zip
 rm -f $fn

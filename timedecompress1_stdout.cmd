@@ -8,7 +8,7 @@ set fn = 200908010000_RDR.TAB
 # input files must exist
 # prepfiles.cmd creates these files
 
-echo To clear disk buffer execute 
+echo To clear page caches execute 
 echo sudo sysctl -w vm.drop_caches=1
 echo before running this script
 

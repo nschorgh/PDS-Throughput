@@ -31,5 +31,5 @@ To be developed.
 
 ### Acknowledgments
 
-SUPPORT: This code development was supported by NASA's Lunar Data Analysis Program.
+This code development was supported by NASA's Lunar Data Analysis Program.
 

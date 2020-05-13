@@ -19,8 +19,8 @@ rm -f tmp
 # txt
 /usr/bin/time -o tmp     cat $fn > tmp_tab
 
-# bzip2
-/usr/bin/time -o tmp -a  bzip2 -d -k -c $fn.bz2 > tmp_bz
+# brotli
+/usr/bin/time -o tmp -a  brotli -d -k -c $fn.br > tmp_br
 
 # gzip
 /usr/bin/time -o tmp -a  gunzip -k -c $fn.gz > tmp_gz 
@@ -41,4 +41,4 @@ rm -f tmp
 /usr/bin/time -o tmp -a  unzstd -c -q $fn.zst > tmp_zst
 
 
-rm -f tmp_?z tmp_??? tmp_lzma
+rm -f tmp_?? tmp_??? tmp_lzma

@@ -22,7 +22,7 @@ gzip -k $fn
 # lz4 -1 (1..9)
 lz4 -k $fn
 
-# lzma -6 (0..9)  slow
+# lzma -6 (0..9)
 lzma -k $fn
 
 # rar -m3 (0..5)

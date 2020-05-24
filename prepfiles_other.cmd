@@ -35,7 +35,7 @@ lz4 -9 -k -q  $fn  $fn-lev9.lz4
 lz4 -12 -k -q  $fn  $fn-lev12.lz4
 
 
-# lzma -6 (0..9) (slow)
+# lzma -6 (0..9)
 lzma -0 -k $fn
 mv $fn.lzma $fn-lev0.lzma
 lzma -9 -T6 -k $fn
@@ -44,11 +44,8 @@ mv $fn.lzma $fn-lev9.lzma
 
 # rar -m3 (0..5)
 # level 0 means no compression
-rar a -m1 $fn.rar $fn
-mv $fn.rar $fn-lev1.rar
-
-rar a -m5 $fn.rar $fn
-mv $fn.rar $fn-lev5.rar
+rar a -m1 $fn-lev1.rar $fn
+rar a -m5 $fn-lev5.rar $fn
 
 
 # zip -6  (0..9)

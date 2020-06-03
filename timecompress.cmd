@@ -6,7 +6,7 @@ set fn = 200908010000_RDR.TAB
 
 # do not use shell built-in time command, instead use /usr/bin/time
 
-rm -f  $fn*.br $fn.gz $fn*.lz4 $fn*.lzma $fn.zip $fn*.zst 
+rm -f  $fn*.br $fn.bz2 $fn.gz $fn*.lz4 $fn*.lzma $fn.zip $fn*.zst 
 rm -f tmp
 touch tmp
 
@@ -20,6 +20,9 @@ rm -f tmp.tab
 /usr/bin/time -o tmp -a  brotli -k -9 $fn -o $fn-lev9.br
 /usr/bin/time -o tmp -a  brotli -k -q 10 $fn -o $fn-lev10.br
 
+# bzip2
+/usr/bin/time -o tmp -a  bzip2 -z -k $fn
+
 # gzip
 /usr/bin/time -o tmp -a  gzip -k $fn 
 
@@ -32,8 +35,6 @@ rm -f tmp.tab
 rm -f $fn.lzma
 /usr/bin/time -o tmp -a  lzma -9 -k $fn
 mv $fn.lzma $fn-lev9.lzma
-/usr/bin/time -o tmp -a  lzma -k -e $fn
-mv $fn.lzma $fn-lev6e.lzma
 /usr/bin/time -o tmp -a  lzma -9 -k -e $fn
 mv $fn.lzma $fn-lev9e.lzma
 

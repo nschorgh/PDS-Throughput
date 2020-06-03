@@ -1,7 +1,7 @@
 #!/bin/csh
 
 # compression to other than default level
-# this overwrites some files with standard names
+# files with standard names may be overwritten
 # final files contain *-lev* in filename
 
 set fn = 200908010000_RDR.TAB
@@ -40,6 +40,10 @@ lzma -0 -k $fn
 mv $fn.lzma $fn-lev0.lzma
 lzma -9 -T6 -k $fn
 mv $fn.lzma $fn-lev9.lzma
+lzma -k -e $fn
+mv $fn.lzma $fn-lev6e.lzma
+lzma -9 -T6 -k -e $fn
+mv $fn.lzma $fn-lev9e.lzma
 
 
 # rar -m3 (0..5)

@@ -14,13 +14,16 @@ Formats:
 
 ### Throughput Studies
 
-`prepfiles*.cmd`  creates files of various compression formats
+`prepfiles.cmd`  creates files of various compression formats using default level  
+`prepfiles_other.cmd`  creates files of various compression formats using non-default levels  
 
-`timedecompress1*.cmd`  measures time for file decompression  
-`timedecompress.cmd`  measures time for file compression  
+`timedecompress1.cmd`  measures times for file decompression  
+`timedecompress1_stdout.cmd`  measures times for file decompression via stdout  
+`timecompress.cmd`  measures times for file compression  
 
 `Parallel/timeparallelfilter.cmd`  measures times for parallel file decompresson and filtering  
-`Parallel/filter1_*.cmd`  shell scripts called by timeparallelfilter.cmd  
+`Parallel/timefilter1.cmd`  measures times for individual calls of `filter1_*.cmd`  
+`Parallel/filter1_*.cmd`  shell scripts called by `./time*.cmd`  
 
 
 ### Throughput Tools
@@ -32,5 +35,5 @@ To be developed.
 
 ### Acknowledgments
 
-This code development was supported by NASA's Lunar Data Analysis Program.
+This study is supported by NASA's Lunar Data Analysis Program.
 

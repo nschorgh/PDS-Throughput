@@ -6,13 +6,11 @@ High-Throughput PDS Data Processing
 Throughput benchmarks for various lossless compression formats applied to a data set from the PDS (Planetary Data System)
 
 
-Input files for case study:  
-* Diviner RDR level-1 files  
+Input files for case study:  Diviner RDR level-1 files  
 
-Benchmarked compression formats:
-* zip, gzip, lzma, lz4, br, zstd, and others  
+Benchmarked compression formats: zip, gzip, lzma, lz4, brotli, zstd, and others  
 
-`report.pdf` Report that describes the results  
+[`report.pdf`](https://raw.githubusercontent.com/nschorgh/PDS-Throughput/master/report.pdf) Report that describes the results  
 
 `prepfiles.cmd`  creates files of various compression formats using default level  
 `prepfiles_other.cmd`  creates files of various compression formats using non-default levels  
